@@ -26,7 +26,7 @@ def get_json_data_to_obj(json_file, default_path=config["post_save_default_path"
     if not os.path.exists(json_file):
         raise FileNotFoundError(f"文件 {json_file} 不存在。請確認文件路徑是否正確。")
 
-    print(f'json_file:{json_file}')
+    # print(f'json_file:{json_file}')
     with open(json_file, "r", encoding="utf-8") as file:
         data = json.load(file)  # 載入 JSON 數據
     return data
@@ -36,7 +36,7 @@ def main():
     # 取出 posts 陣列
     analysis("20250104_162715_Posts.json")
     
-def analysis(json_file):
+def analysis(json_file : str):
     json_str = get_json_data_to_obj(json_file)
 
     posts = json_str.get("posts", [])  # 使用 .get() 確保即使沒有 posts 屬性也不會報錯

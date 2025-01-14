@@ -13,8 +13,14 @@ from datetime import datetime
 # threads 爬蟲
 ###
 
+def load_config(file_path='config.json'):
+    with open(file_path, 'r') as file:
+        return json.load(file)
+    
+config = load_config()
+
 # 設定 ChromeDriver 路徑
-CHROMEDRIVER_PATH = 'C:\workspace\python/threads\chromedriver-win64/chromedriver.exe' 
+CHROMEDRIVER_PATH = config["proj_path"] + config["chromeDriver_path"]
 # 找到每篇貼文的外框
 post_article_class = 'x1a2a7pz x1n2onr6'
 # 取得貼文文字內容
@@ -26,14 +32,8 @@ post_id_set = set()
 # 平台
 threads_plant = "https://www.threads.net/"
 # 滾動刷新頁面次數
-rolling_index = 1
+rolling_index = config["rolling_index"]
 
-def load_config(file_path='config.json'):
-    with open(file_path, 'r') as file:
-        return json.load(file)
-    
-config = load_config()
-load_config()
 
 # 等待網頁加載完成並獲取內容
 def fetch_webpage_no_rolling(url):
