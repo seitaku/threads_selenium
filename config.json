@@ -1,5 +1,7 @@
 {
     "post_save_default_path": "./post/json/ori",
     "analysis_file_path": "./post/json/analysis",
-    "database_url": "your-database-url"
+    "proj_path": "C:/workspace/python/threads",
+    "chromeDriver_path": "/chromedriver-win64/chromedriver.exe",
+    "rolling_index": 3
 }
