@@ -1,0 +1,5 @@
+{
+    "post_save_default_path": "./post/json/ori",
+    "analysis_file_path": "./post/json/analysis",
+    "database_url": "your-database-url"
+}
