@@ -3,5 +3,6 @@
     "analysis_file_path": "./post/json/analysis",
     "proj_path": "C:/workspace/python/threads",
     "chromeDriver_path": "/chromedriver-win64/chromedriver.exe",
-    "rolling_index": 3
+    "rolling_index": 3,
+    "version": 1.0
 }
