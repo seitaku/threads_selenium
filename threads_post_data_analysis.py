@@ -3,6 +3,10 @@ import re
 from datetime import datetime
 import os
 
+###
+# threads posts 文章分析
+###
+
 # 定義正規表達式模式
 pattern = r"讚([\d\.]+)(萬|千)?|留言([\d,]+)(萬|千)?|轉發([\d,]+)(萬|千)?|分享([\d,]+)(萬|千)?"
 

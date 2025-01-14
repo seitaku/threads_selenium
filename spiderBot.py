@@ -9,6 +9,10 @@ import time
 import json
 from datetime import datetime
 
+###
+# threads 爬蟲
+###
+
 # 設定 ChromeDriver 路徑
 CHROMEDRIVER_PATH = 'C:\workspace\python/threads\chromedriver-win64/chromedriver.exe' 
 # 找到每篇貼文的外框
@@ -197,9 +201,6 @@ def get_posts_immediate(html_content, posts_data_json):
 
         posts_data_json.append(post_data_json)
         print(post_data_json) #log 列出
-
-    
-
     # return analyze_data_json
 
 
@@ -214,7 +215,7 @@ def save_json_to_file(json_str):
     current_time = curr_time()
     # 使用當前時間作為檔案名稱
     post_save_default_path = config["post_save_default_path"]
-    file_name = f"{current_time}_Posts_analysis.json"
+    file_name = f"{current_time}_Posts.json"
     with open(f"{post_save_default_path}/{file_name}", 'w', encoding='utf-8') as json_file:
         json.dump(json_str, json_file, ensure_ascii=False, indent=4)
     return file_name
@@ -277,7 +278,7 @@ def get_threads_v1_byId(thread_id, rolling : bool = True):
         posts_data_json = get_posts_local_html(html_file_name)
     
     print(f'finsh rolling:{rolling}')
-    print(f'post post_id_set:{post_id_set}, size:{len(post_id_set)}')
+    # print(f'post post_id_set:{post_id_set}, size:{len(post_id_set)}')
     analyze_data_json = post_data_to_json(posts_data_json)
     return save_json_to_file(analyze_data_json)
 
